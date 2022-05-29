@@ -320,7 +320,7 @@ a:hover, a:active {
     padding: 12px 50px 10px;
     margin-right: 32px;
     border: 0;
-    border-bottom: 3px solid #18a3eb;
+    border-bottom: 3px solid #eb1818;
     border-radius: 20px;
     font-size: 16px;
     font-weight: 600;
@@ -648,13 +648,13 @@ ul.tabs-nav .tab-nav.active {
     text-align: left;
 }
 
-.subscribe-banner input[type="submit"] {
+/* .subscribe-banner input[type="submit"] {
     margin-top: 32px;
     margin-right: 0;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-}
+} */
 
 /*--------------------------------------------------------------
 # Homepage
@@ -1068,7 +1068,7 @@ ul.tabs-nav .tab-nav.active {
 
 .single-page .site-header h1 {
     margin-bottom: 0;
-    font-size: 60px;
+    font-size: 80px;
     font-weight: 600;
     color: #404040;
 }

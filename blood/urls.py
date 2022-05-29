@@ -8,5 +8,6 @@ urlpatterns = [
     path('abcd',views.temp,name='temp'),
     path('don',views.don,name='don'),
     path('req',views.req,name='req'),
+    path('result',views.result,name='result'),
     path('index',views.index,name='index'),
 ]

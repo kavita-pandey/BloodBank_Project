@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Blood Donation</title>
+{% endblock title %}
+
+{% block content %}
+
+<header style="background-image: url({% static 'images/health001.jpg' %})">
+  <div class="container"><br>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card shadow-lg">
+          <div class="card-heading text-center"><b>Welcome to blood donation</b></div>
+          <div class="card-body">
+            <h2 class="title">Check Your Health - To donate blood</h2>
+            <form action="result" method="get" class="form-group">
+              {% csrf_token %}
+
+
+              <div class="row">
+                <div class="col">
+
+                  <label for="pregnencies"> <b>Pregnencies:</b>  </label>
+                  <input type="number" class="form-control" placeholder="" name="n1" required>
+
+                </div>
+                <div class="col">
+
+                  <label><b>Glucose:</b> </label>
+                  <input type="number" class="form-control" name="n2" required >
+
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col">
+
+                  <label><b>Blood Pressure:</b> </label>
+                  <input type="number" class="form-control" name="n3" required>
+
+                </div>
+                <div class="col">
+
+                  <label><b>Skin Thickness:</b> </label>
+                  <input type="number" class="form-control" name="n4" required>
+
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col">
+
+                  <label><b>Insulin:</b> </label>
+                  <input type="number" class="form-control" name="n5" required>
+
+                </div>
+                <div class="col">
+
+                  <label><b>Body mass Index:</b> </label>
+                  <input type="number" class="form-control" name="n6" required>
+
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col">
+
+                  <label><b>Diabetic Pedigree Fumction:</b> </label>
+                  <input type="text" class="form-control" name="n7" required>
+
+                </div>
+                <div class="col">
+
+                  <label><b>Your Age:</b> </label>
+                  <input type="number" class="form-control" name="n8" required>
+
+                </div>
+              </div><br>
+              <button class="btn btn-info mx-4"> <b>See Result</b> </button>
+              </br></br>
+
+              <div class="alert alert-warning" role="alert">
+                <h4><b><i>Result:</i></b> <b style="color: red ;">{{result2}} </b>
+                  <h4></br>
+                    <h4>Actual Percentile Result: {{pred}}<h4>
+              </div>
+
+            </form>
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <b class="text-dark">Launch demo modal</b> 
+            </button>
+            <div>
+
+              {% for message in messages %}
+              {{message}} <br>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+</header>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <b class="text-dark">Launch demo modal</b> 
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Prediction Parametre Values</b></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><b>Pregnencies: </b>Number of times pregnant eg. 1,2...13</p></br>
+        <p><b>Glucose: </b>Plasma glucose concentration a 2 hours in an oral glucose tolerance test eg. 123, 89...</p>
+        </br>
+        <p><b>Blood Pressure: </b>Diastolic blood pressure (mm Hg) eg. 69, 126...96</p></br>
+        <p><b>Skin Thickness: </b>Triceps skin fold thickness (mm) eg. 0, 21...35</p></br>
+        <p><b>Insulin: </b>2-Hour serum insulin (mu U/ml) eg. 0, 126...89</p></br>
+        <p><b>BMI: </b>Body mass index (weight in kg/(height in m)^2) eg. 41.2, 26.5...44.3</p></br>
+        <p><b>Diabetic Pedigree Fumction: </b>Diabetes pedigree function eg. 0.231, 0.322...0.13</p></br>
+        <p><b>Age: </b>Age (years) eg. 1,2...13</p></br>
+        <p><i>Outcome: </i>Class variable (0 or 1)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary text-dark" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,10 +1,11 @@
+{% extends 'base.html' %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Table V02</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block title %}
+<title>Blood Donation</title>
+{% endblock title %}
+
+{% block link %}
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="{% static 'OTHER/images/icons/favicon.ico' %}"/>
 <!--===============================================================================================-->
@@ -21,9 +22,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'OTHER/css/util.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'OTHER/css/main.css' %}">
 <!--===============================================================================================-->
-</head>
-<body >
+{% endblock %}
 
+	{% block content %}
 	
 	<div class="limiter" >
 		<div class="container-table100">
@@ -70,8 +71,8 @@
 	</div>
 	
 	<br><br>
-
-<!--===============================================================================================-->
+	{% endblock %}
+{% comment %} <!--===============================================================================================-->
 	<script src="{% static 'OTHER/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->
 	<script src="{% static 'OTHER/vendor/bootstrap/js/popper.js' %}"></script>
@@ -82,4 +83,4 @@
 	<script src="{% static 'OTHER/js/main.js' %}"></script>
 
 </body>
-</html>
+</html> {% endcomment %}

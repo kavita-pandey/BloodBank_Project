@@ -40,4 +40,6 @@ urlpatterns = [
     path('aboutus',views.aboutus,name='aboutus'),
     path('donationmanual',views.donationmanual,name='donationmanual'),
     path('donorfitnesschart',views.donorfitnesschart,name='donorfitnesschart'),
+    path('predict',views.predict,name='predict'),
+    # path('predict/result',views.result,name='result'),
 ]
